@@ -1,5 +1,6 @@
 package me.mclis.main;
 
+import me.mclis.main.API.PteroAPI;
 import me.mclis.main.Commands.testcmd;
 import me.mclis.main.Listeners.ClickInventory;
 import me.mclis.main.Listeners.JoinListener;
@@ -9,6 +10,8 @@ import org.jetbrains.annotations.Nullable;
 
 public class Main extends JavaPlugin {
 
+
+    PteroAPI papi = new PteroAPI();
 
     @Override
     public void onLoad() {
@@ -20,6 +23,7 @@ public class Main extends JavaPlugin {
         registerListener();
         registerCommands();
        getLogger().info("Plugin is started");
+        papi.createServerVanilla("tester", 1, 3, "ghcr.io/pterodactyl/yolks:java_21", 12480, 10000, 0, 2, 1, 2, 5, "latest");
     }
 
     @Override
