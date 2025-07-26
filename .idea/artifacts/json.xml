@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="json">
+    <output-path>$PROJECT_DIR$/out/artifacts/json</output-path>
+    <root id="archive" name="json.jar">
+      <element id="artifact" artifact-name="Gradle__org_json_json_20250517" />
+    </root>
+  </artifact>
+</component>

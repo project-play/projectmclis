@@ -1,3 +1,5 @@
+
+
 plugins {
     id("java")
 }
@@ -16,6 +18,7 @@ repositories {
 dependencies {
     dependencies {
         compileOnly("io.papermc.paper:paper-api:1.21.7-R0.1-SNAPSHOT")
+
     }
 }
 
@@ -26,3 +29,4 @@ java {
 tasks.test {
     useJUnitPlatform()
 }
+

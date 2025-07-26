@@ -22,7 +22,7 @@ public class TestInventory implements InventoryHolder {
         ItemStack i2 = new ItemStack(Material.BLACK_STAINED_GLASS_PANE);
         ItemStack i3 = new ItemStack(Material.BLACK_STAINED_GLASS_PANE);
         ItemStack i4 = new ItemStack(Material.BLACK_STAINED_GLASS_PANE);
-        ItemStack i5 = new ItemStack(Material.OAK_SAPLING);
+        ItemStack i5 = new ItemStack(Material.CRAFTING_TABLE);
         ItemStack i6 = new ItemStack(Material.BLACK_STAINED_GLASS_PANE);
         ItemStack i7 = new ItemStack(Material.BLACK_STAINED_GLASS_PANE);
         ItemStack i8 = new ItemStack(Material.BLACK_STAINED_GLASS_PANE);

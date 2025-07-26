@@ -4,6 +4,9 @@ import me.mclis.main.API.PteroAPI;
 import me.mclis.main.Commands.testcmd;
 import me.mclis.main.Listeners.ClickInventory;
 import me.mclis.main.Listeners.JoinListener;
+import me.mclis.main.Util.FileManager;
+import me.mclis.main.Util.MySQLFileManager;
+import org.apache.logging.log4j.CloseableThreadContext;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.plugin.java.JavaPlugin;
 import org.jetbrains.annotations.Nullable;
@@ -11,7 +14,15 @@ import org.jetbrains.annotations.Nullable;
 public class Main extends JavaPlugin {
 
 
-    PteroAPI papi = new PteroAPI();
+
+    private static Main instance;
+    public Main(){
+        instance = this;
+    }
+
+    public static Main getInstance(){
+        return instance;
+    }
 
     @Override
     public void onLoad() {
@@ -22,8 +33,15 @@ public class Main extends JavaPlugin {
     public void onEnable() {
         registerListener();
         registerCommands();
-       getLogger().info("Plugin is started");
-        papi.createServerVanilla("tester", 1, 3, "ghcr.io/pterodactyl/yolks:java_21", 12480, 10000, 0, 2, 1, 2, 5, "latest");
+
+    //    papi.createServerVanilla("tester", 1, 3, "ghcr.io/pterodactyl/yolks:java_21", 12480, 10000, 0, 2, 1, 2, 5, "latest");
+
+        FileManager config = new FileManager("config.yml", getDataFolder());
+
+        String prefix = config.toFileConfigurtaion().getString("Util.prefix");
+        MySQLFileManager mysql = new MySQLFileManager("mysql.yml", getDataFolder());
+
+        getLogger().info(prefix + "Plugin is started");
     }
 
     @Override

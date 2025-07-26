@@ -1,5 +1,6 @@
 package me.mclis.main.Commands;
 
+import me.mclis.main.API.PteroAPI;
 import me.mclis.main.Inventories.TestInventory;
 import me.mclis.main.Main;
 import org.bukkit.Material;
@@ -29,6 +30,7 @@ public class testcmd implements CommandExecutor {
 
             if(sender.isOp()){
                 if(sender instanceof Player){
+                    PteroAPI papi = new PteroAPI();
                     Player p = (Player) sender;
                     p.sendMessage("Test was successfull");
                     ItemStack is = new ItemStack(Material.ACACIA_LOG);
@@ -42,6 +44,7 @@ public class testcmd implements CommandExecutor {
                     TestInventory ti = new TestInventory(plugin);
 
                     p.openInventory(ti.getInventory());
+                    papi.createServerVanilla("tester", 1, 3, "ghcr.io/pterodactyl/yolks:java_21", 12480, 10000, 0, 2, 1, 2, 5, "latest");
 
 
 
